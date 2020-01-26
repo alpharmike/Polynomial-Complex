@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.embed.swing.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" side="BOTTOM" stylesheets="@style.css" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+  <tabs>
+    <Tab text="Cartesian">
+         <content>
+            <BorderPane prefHeight="200.0" prefWidth="200.0">
+               <top>
+                  <MenuBar BorderPane.alignment="CENTER">
+                    <menus>
+                      <Menu mnemonicParsing="false" text="File">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="Close" />
+                        </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Edit">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="Delete" />
+                        </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Help">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="About" />
+                        </items>
+                      </Menu>
+                    </menus>
+                  </MenuBar>
+               </top>
+               <right>
+                  <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: gray;" BorderPane.alignment="CENTER">
+                     <children>
+                        <Button fx:id="cartAdd" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#cartesianAdd" prefHeight="105.0" prefWidth="142.0" text="Add" />
+                        <Button fx:id="cartSubtract" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#cartesianSubtract" prefHeight="105.0" prefWidth="142.0" text="Subtract" />
+                        <Button fx:id="cartMul" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="80.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#cartesianMultiply" prefHeight="105.0" prefWidth="142.0" text="Multiply" />
+                        <Button fx:id="cartDiv" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="150.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#cartesianDivide" prefHeight="105.0" prefWidth="142.0" text="Divide" />
+                     </children>
+                  </VBox>
+               </right>
+               <center>
+                  <GridPane alignment="CENTER" BorderPane.alignment="CENTER">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.0" minWidth="10.0" prefWidth="115.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="329.0" minWidth="0.0" prefWidth="89.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="329.0" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="329.0" minWidth="10.0" prefWidth="96.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="67.0" prefWidth="120.0" text="Real1">
+                           <padding>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </padding>
+                        </Label>
+                        <TextField fx:id="real1" alignment="CENTER" GridPane.columnIndex="1">
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="119.0" text="Imaginary1" textAlignment="CENTER" GridPane.rowIndex="1">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </Label>
+                        <TextField fx:id="imaginary1" alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="67.0" prefWidth="129.0" text="Result" textAlignment="CENTER" GridPane.rowIndex="2">
+                           <padding>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </padding>
+                        </Label>
+                        <TextField fx:id="cartesianResult" alignment="CENTER" editable="false" prefHeight="85.0" prefWidth="253.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="105.0" text="Real2" GridPane.columnIndex="2">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </Label>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="67.0" prefWidth="202.0" text="Imaginary2" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <TextField fx:id="real2" GridPane.columnIndex="3">
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField fx:id="imaginary2" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </GridPane.margin>
+                        </TextField>
+                     </children>
+                  </GridPane>
+               </center>
+               <left>
+                  <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: lightgreen;" BorderPane.alignment="CENTER" />
+               </left>
+            </BorderPane>
+         </content>
+    </Tab>
+      <Tab text="Polar">
+         <content>
+            <BorderPane prefHeight="200.0" prefWidth="200.0">
+               <center>
+                  <GridPane alignment="CENTER" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="67.0" prefWidth="120.0" text="Radius1">
+                           <padding>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </padding>
+                        </Label>
+                        <TextField fx:id="radius1" alignment="CENTER" GridPane.columnIndex="1">
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="101.0" text="Theta1" textAlignment="CENTER" GridPane.rowIndex="1">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </Label>
+                        <TextField fx:id="theta1" alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="67.0" prefWidth="129.0" text="Result" textAlignment="CENTER" GridPane.rowIndex="2">
+                           <padding>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </padding>
+                        </Label>
+                        <TextField fx:id="polarResult" alignment="CENTER" editable="false" prefHeight="85.0" prefWidth="253.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="105.0" text="Radius2" GridPane.columnIndex="2">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </Label>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="67.0" prefWidth="202.0" text="Theta2" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <TextField fx:id="radius2" GridPane.columnIndex="3">
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField fx:id="theta2" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </GridPane.margin>
+                        </TextField>
+                     </children>
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.0" minWidth="10.0" prefWidth="106.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="329.0" minWidth="0.0" prefWidth="102.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="329.0" minWidth="10.0" prefWidth="85.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="329.0" minWidth="10.0" prefWidth="107.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                  </GridPane>
+               </center>
+               <left>
+                  <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: lightgreen;" BorderPane.alignment="CENTER" />
+               </left>
+               <right>
+                  <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: gray;" BorderPane.alignment="CENTER">
+                     <children>
+                        <Button fx:id="polarAdd" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#polarAddFunc" prefHeight="105.0" prefWidth="142.0" text="Add" />
+                        <Button fx:id="polarSub" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#polarSubtract" prefHeight="105.0" prefWidth="142.0" text="Subtract" />
+                        <Button fx:id="polarMul" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="80.0" mnemonicParsing="false" onAction="#polarMultiply" prefHeight="105.0" prefWidth="142.0" text="Multiply" />
+                        <Button fx:id="polarDiv" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="150.0" mnemonicParsing="false" onAction="#polarDivide" prefHeight="105.0" prefWidth="100.0" text="Divide" />
+                     </children>
+                  </VBox>
+               </right>
+               <top>
+                  <MenuBar BorderPane.alignment="CENTER">
+                     <menus>
+                        <Menu mnemonicParsing="false" text="File">
+                           <items>
+                              <MenuItem mnemonicParsing="false" text="Close" />
+                           </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Edit">
+                           <items>
+                              <MenuItem mnemonicParsing="false" text="Delete" />
+                           </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Help">
+                           <items>
+                              <MenuItem mnemonicParsing="false" text="About" />
+                           </items>
+                        </Menu>
+                     </menus>
+                  </MenuBar>
+               </top>
+            </BorderPane>
+         </content>
+      </Tab>
+      <Tab text="Extra">
+         <content>
+            <BorderPane prefHeight="200.0" prefWidth="200.0">
+               <center>
+                  <GridPane alignment="CENTER" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label fx:id="firstValueLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="67.0" prefWidth="168.0" text="Real">
+                           <padding>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </padding>
+                        </Label>
+                        <TextField fx:id="firstValueField" alignment="CENTER" GridPane.columnIndex="1">
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <Label fx:id="secondValueLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="162.0" text="Imaginary" textAlignment="CENTER" GridPane.rowIndex="1">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </Label>
+                        <TextField fx:id="secondValueField" alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="67.0" prefWidth="179.0" text="Result" textAlignment="CENTER" GridPane.rowIndex="2">
+                           <padding>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </padding>
+                        </Label>
+                        <TextField fx:id="extraResult" alignment="CENTER" editable="false" layoutX="215.0" layoutY="149.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </GridPane.margin>
+                        </TextField>
+                     </children>
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="197.0" minWidth="10.0" prefWidth="138.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="329.0" minWidth="0.0" prefWidth="247.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                  </GridPane>
+               </center>
+               <left>
+                  <VBox prefHeight="316.0" prefWidth="109.0" style="-fx-background-color: lightgreen;" BorderPane.alignment="CENTER">
+                     <children>
+                        <ChoiceBox fx:id="modeChoice" onMousePressed="#initChoice" prefWidth="150.0" />
+                        <Button fx:id="sine" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#getSine" prefHeight="62.0" prefWidth="100.0" text="Sin" />
+                        <Button fx:id="cosine" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="49.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#getCosine" prefHeight="62.0" prefWidth="100.0" text="Cos" />
+                        <Button fx:id="sinh" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="111.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#getSinh" prefHeight="62.0" prefWidth="100.0" text="Sinh" />
+                        <Button fx:id="cosh" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="173.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#getCosh" prefHeight="62.0" prefWidth="100.0" text="Cosh" />
+                        <Button fx:id="logarithm" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="173.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#getLogarithm" prefHeight="62.0" prefWidth="100.0" text="Ln" />
+                     </children>
+                  </VBox>
+               </left>
+               <right>
+                  <VBox prefHeight="316.0" prefWidth="115.0" style="-fx-background-color: gray;" BorderPane.alignment="CENTER">
+                     <children>
+                        <Button fx:id="magnitude" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#getMagnitude" prefHeight="105.0" prefWidth="142.0" text="Magnitude" />
+                        <Button fx:id="argValue" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#getArgValue" prefHeight="105.0" prefWidth="142.0" text="Arg Value" />
+                        <Button fx:id="conjugate" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="80.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#getConjugate" prefHeight="105.0" prefWidth="142.0" text="Conjugate" />
+                        <Button fx:id="convert" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="150.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#convertMode" prefHeight="105.0" prefWidth="142.0" text="Convert" />
+                     </children>
+                  </VBox>
+               </right>
+               <top>
+                  <MenuBar BorderPane.alignment="CENTER">
+                     <menus>
+                        <Menu mnemonicParsing="false" text="File">
+                           <items>
+                              <MenuItem mnemonicParsing="false" text="Close" />
+                           </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Edit">
+                           <items>
+                              <MenuItem mnemonicParsing="false" text="Delete" />
+                           </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Help">
+                           <items>
+                              <MenuItem mnemonicParsing="false" text="About" />
+                           </items>
+                        </Menu>
+                     </menus>
+                  </MenuBar>
+               </top>
+            </BorderPane>
+         </content>
+      </Tab>
+  </tabs>
+</TabPane>
